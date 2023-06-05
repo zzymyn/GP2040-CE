@@ -158,6 +158,65 @@ inline uint8_t runSOCDCleaner(SOCDMode mode, uint8_t dpad)
 		return dpad;
 	}
 
+	if (mode == SOCD_MODE_4WAY) {
+		static uint32_t timeL = 0;
+		static uint32_t timeR = 0;
+		static uint32_t timeU = 0;
+		static uint32_t timeD = 0;
+		uint32_t timeMin = UINT32_MAX;
+		uint32_t newDpad = 0;
+
+		if (dpad & GAMEPAD_MASK_LEFT) {
+			if (timeL < UINT32_MAX) {
+				++timeL;
+			}
+			if (timeL <= timeMin) {
+				timeMin = timeL;
+				newDpad = GAMEPAD_MASK_LEFT;
+			}
+		} else {
+			timeL = 0;
+		}
+
+		if (dpad & GAMEPAD_MASK_RIGHT) {
+			if (timeR < UINT32_MAX) {
+				++timeR;
+			}
+			if (timeR <= timeMin) {
+				timeMin = timeR;
+				newDpad = GAMEPAD_MASK_RIGHT;
+			}
+		} else {
+			timeR = 0;
+		}
+
+		if (dpad & GAMEPAD_MASK_UP) {
+			if (timeU < UINT32_MAX) {
+				++timeU;
+			}
+			if (timeU <= timeMin) {
+				timeMin = timeU;
+				newDpad = GAMEPAD_MASK_UP;
+			}
+		} else {
+			timeU = 0;
+		}
+
+		if (dpad & GAMEPAD_MASK_DOWN) {
+			if (timeD < UINT32_MAX) {
+				++timeD;
+			}
+			if (timeD <= timeMin) {
+				timeMin = timeD;
+				newDpad = GAMEPAD_MASK_DOWN;
+			}
+		} else {
+			timeD = 0;
+		}
+
+		return newDpad;
+	}
+
 	static DpadDirection lastUD = DIRECTION_NONE;
 	static DpadDirection lastLR = DIRECTION_NONE;
 	uint8_t newDpad = 0;

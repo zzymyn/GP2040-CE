@@ -28,6 +28,7 @@ const SOCD_MODES = [
 	{ label: 'Neutral', value: 1 },
 	{ label: 'Last Win', value: 2 },
 	{ label: 'First Win', value: 3 },
+	{ label: '4-way', value: 5 },
 	{ label: 'Off', value: 4 },
 ];
 
@@ -49,6 +50,7 @@ const HOTKEY_ACTIONS = [
 	{ label: 'SOCD Neutral', value: 7 },
 	{ label: 'SOCD Last Win', value: 8 },
 	{ label: 'SOCD First Win', value: 11 },
+	{ label: 'SOCD 4-Way', value: 13 },
 	{ label: 'SOCD Cleaning Off', value: 12 },
 	{ label: 'Invert X Axis', value: 9 },
 	{ label: 'Invert Y Axis', value: 10 },

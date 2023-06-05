@@ -45,6 +45,7 @@ namespace ConfigLegacy
         SOCD_MODE_SECOND_INPUT_PRIORITY,
         SOCD_MODE_FIRST_INPUT_PRIORITY,
         SOCD_MODE_BYPASS,
+        SOCD_MODE_4WAY,
     };
 
     enum DpadDirection
@@ -71,6 +72,7 @@ namespace ConfigLegacy
         HOTKEY_INVERT_Y_AXIS,
         HOTKEY_SOCD_FIRST_INPUT,
         HOTKEY_SOCD_BYPASS,
+        HOTKEY_SOCD_4WAY,
     };
 
     enum OnBoardLedMode
@@ -496,6 +498,7 @@ static bool isValidSOCDMode(ConfigLegacy::SOCDMode socdMode)
         case SOCD_MODE_SECOND_INPUT_PRIORITY:
         case SOCD_MODE_FIRST_INPUT_PRIORITY:
         case SOCD_MODE_BYPASS:
+        case SOCD_MODE_4WAY:
             return true;
     }
     return false;
@@ -518,6 +521,7 @@ static bool isValidGamepadHotkey(ConfigLegacy::GamepadHotkey hotkey)
         case HOTKEY_INVERT_Y_AXIS:
         case HOTKEY_SOCD_FIRST_INPUT:
         case HOTKEY_SOCD_BYPASS:
+        case HOTKEY_SOCD_4WAY:
             return true;
     }
     return false;

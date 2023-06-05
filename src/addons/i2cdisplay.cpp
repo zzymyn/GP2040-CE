@@ -954,6 +954,7 @@ void I2CDisplayAddon::drawStatusBar(Gamepad * gamepad)
 		case SOCD_MODE_SECOND_INPUT_PRIORITY: statusBar += " SOCD-L"; break;
 		case SOCD_MODE_FIRST_INPUT_PRIORITY:  statusBar += " SOCD-F"; break;
 		case SOCD_MODE_BYPASS:                statusBar += " SOCD-X"; break;
+		case SOCD_MODE_4WAY:                  statusBar += " SOCD-4"; break;
 	}
 	drawText(0, 0, statusBar);
 }
